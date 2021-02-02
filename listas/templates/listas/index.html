@@ -1,0 +1,12 @@
+{% extends "listas/layout.html" %}
+        {% block body %}
+        <h3>Lista de tareas:</h3>
+        <ul>
+            {% for tarea in lista %}
+                <li>{{ tarea }}</li>
+            {% empty %}
+                <p>No hay tareas.</p>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'listas:add' %}">Crear tarea</a>
+        {% endblock %}

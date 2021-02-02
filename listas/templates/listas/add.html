@@ -1,0 +1,10 @@
+{% extends "listas/layout.html" %}
+        {% block body %}
+        <h3>Añadir tarea:</h3>
+        <form action="{% url 'listas:add' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Añadir">
+        </form> 
+        <a href="{% url 'listas:index' %}">Ver tareas</a>
+        {% endblock %}
